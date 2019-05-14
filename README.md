@@ -10,9 +10,12 @@ Clone the repository, then install the requirements (currently only the non-stan
     cd open-mastermind
     pip install -r requirements.txt
 
+## to play
+
+    cd open-mastermind
     python3 mastermind.py
 
-## game play
+## example game play
 
 Each puzzle contains 4 boxes. Each turn you choose from 6 colors.
 
