@@ -10,18 +10,21 @@ from colorama import init, Style, Fore
 
 def generate_board():
 
+	# generates a random board based on params.py
 	return [random.choice(list(params.color_dict.keys())) for x in range(params.count_boxes)]
 
-   #return [random.choice(list(params.color_dict.values())) for x in range(params.count_colors)]
 
-
-def make_guess(msg):
+def make_guess(msg, master):
 
 	guess = input(msg).lower().strip()
 
 	if guess.startswith('!h'):
 		print_instructions()
 		return
+	elif guess.startswith('!q'):
+		print ('You chose to quit. The solution is:')
+		print_colors(master, params.guess_peg, True)
+		exit(0)
 
 	elif len(guess) != params.count_boxes:
 		print('Invalid guess. Must be',str(params.count_boxes),'colors.','\n')
@@ -33,7 +36,9 @@ def make_guess(msg):
 		return guess
 
 def print_colors(inp, guess_char, tf_master):
-	# print colored balls, supress new line
+
+	# print colored characters, suppress new line
+
 	print('  '.join([params.color_dict.get(x) + guess_char for x in inp]),end='\t')
 	if tf_master:
 		print(Style.RESET_ALL,end='\n')
@@ -52,6 +57,7 @@ def print_instructions():
 	print()
 	print('The order of the response tiles does not necessarily match the colored characters.')
 	print('Type !h to read these instructions again.')
+	print('Type !q to quit and show solution.')
 	print()
 
 def print_results(inp):
@@ -64,20 +70,22 @@ def print_results(inp):
 def get_results(guess, master):
 
 	response = []
-	for j,x in enumerate(list(guess)):
-		
-		# scenario 1: incorrect color
-		if x not in list(master):
-			response.append('9')
 
-		# scenario 2: correct color AND correct placement
-		elif guess[j] == master[j]:
-			response.append('1')
-		
-		# scenario 3: correct color but wrong placement
-		elif x in list(master) and guess[j] != master[j]:
-			response.append('2')
+	for j, x in enumerate(list(master)):
 
+		# scenario 1: color not in solution
+		if master[j] not in guess:
+			response += '9'
+
+		# scenario 2: color in solution, but wrong position
+		elif master[j] in guess and master[j] != guess[j]:
+			response += '2'
+
+		# scenario 3: color in solution, correct position
+		elif master[j] == guess[j]:
+			response += '1'
+
+	# something went wrong
 	if len(response) != params.count_boxes:
 		print('🚀 Houston. We have a problem.')
 		exit(0)
@@ -116,7 +124,7 @@ def main():
 			msg += str(i+1)+' of '+str(params.count_turns)+'. Your guess: '
 
 			# request guess from user
-			guess = make_guess(msg)
+			guess = make_guess(msg, master)
 
 		print_colors(guess, params.guess_peg, False)
 		guess_list.append(guess)
@@ -128,8 +136,9 @@ def main():
 		print_results(results)
 
 		if ''.join(results) == '1'*params.count_boxes:
-			print('🎉 Congrats! You won.')
+			print('🎉 Congrats! You found the solution:')
 			print_colors(master,params.guess_peg,True)
+			print()
 			exit(0)
 
 		# game over... too many turns used

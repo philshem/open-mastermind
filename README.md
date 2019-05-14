@@ -39,6 +39,8 @@ The order of the response tiles is sorted and does not necessarily match the pos
 
 Type !h during gameplay to read these instructions.
 
+Type !q during gameplay to quit and show the solution.
+
 ## change the game parameters
 
 Edit the file `params.py` to:
