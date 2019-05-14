@@ -35,7 +35,7 @@ Response:
 
 _  :  incorrect color
 
-The order of the response tiles does not necessarily match the colored characters.
+The order of the response tiles is sorted and does not necessarily match the position of the colored tiles.
 
 Type !h during gameplay to read these instructions.
 
