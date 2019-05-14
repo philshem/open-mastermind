@@ -54,3 +54,6 @@ Edit the file `params.py` to:
  + different emoji playing pieces
 
 
+## screenshot
+
+![screenshot of gameplay](https://gist.githubusercontent.com/philshem/71507d4e8ecfabad252fbdf4d9f8bdd2/raw/e00c621f403520d3268f2a9ece176fb2f05f2185/mastermind.png)
