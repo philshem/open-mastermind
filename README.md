@@ -2,6 +2,8 @@
 Terminal-based python of classic board game [Mastermind®](https://en.wikipedia.org/wiki/Mastermind_(board_game))
 
 
+![Mastermind board game](https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Mastermind.jpg/137px-Mastermind.jpg)
+
 ## to get the code
 
 Clone the repository, then install the requirements (currently only the non-standary python3 library [`colorama`](https://pypi.org/project/colorama/), which prints a colorful terminal.)
@@ -46,6 +48,4 @@ Edit the file `params.py` to:
 
  + different emoji playing pieces
 
-
-![Mastermind board game](https://upload.wikimedia.org/wikipedia/commons/2/2d/Mastermind.jpg)
 
