@@ -53,6 +53,7 @@ Edit the file `params.py` to:
 
  + different emoji playing pieces
 
+---
 
 ## screenshot
 
