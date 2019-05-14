@@ -28,8 +28,11 @@ Color choices: r g y b m w
 Example turn: rybg
 
 Response:
+
 ◍  :  correct color in correct position
+
 ○  :  correct color in incorrect position
+
 _  :  incorrect color
 
 The order of the response tiles does not necessarily match the colored characters.
