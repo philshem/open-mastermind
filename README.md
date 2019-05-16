@@ -10,7 +10,7 @@ Clone the repository, then install the requirements (currently only the non-stan
 
     git clone https://github.com/philshem/open-mastermind.git
     cd open-mastermind
-    pip install -r requirements.txt
+    pip3 install -r requirements.txt
 
 ## to play
 
