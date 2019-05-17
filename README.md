@@ -12,7 +12,7 @@ Clone the repository, then install the requirements (currently only the non-stan
     cd open-mastermind
     pip install -r requirements.txt
 
-Written in Python3.7, it's also working for Python2.7 as well.
+Written in Python3.7, it should be compatible back to Python2.7.
 
 ## to play
 

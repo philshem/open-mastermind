@@ -22,7 +22,7 @@ setup(
     author='Philip Shemella',
     author_email='philshem@pm.me',
     classifiers=[
-        'Environment :: Console :: Puzzle',
+        'Environment :: Console :: Curses',
         'License :: OSI Approved :: MIT License',
         'Programming Language :: Python :: 3',
         'Topic :: Games/Entertainment :: Puzzle Games',
