@@ -5,3 +5,4 @@ __pycache__
 build
 dist
 open_mastermind.egg-info
+.tox

@@ -24,9 +24,8 @@ Clone the repository, then install the requirements (currently only the non-stan
     cd open-mastermind
     pip install -r requirements.txt
 
-## to play
+And to play from your downloaded code:
 
-    cd open-mastermind
     python mastermind.py
 
 ## example game play
