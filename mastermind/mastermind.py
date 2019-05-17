@@ -5,10 +5,13 @@
 
 # python2 compatability
 from __future__ import print_function
-import __builtin__; input = getattr(__builtin__, 'raw_input', input)
+try:
+	import __builtin__; input = getattr(__builtin__, 'raw_input', input)
+except ImportError:
+    pass
 
 # internal parameters
-import params
+from . import params
 
 import os
 import random
