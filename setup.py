@@ -13,7 +13,7 @@ with open(path.join(here, 'mastermind', 'version')) as f:
     version = f.read().strip()
 
 setup(
-    name='cursewords',
+    name='open_mastermind',
     version=version,
     description='A terminal-based code-breaking game Mastermind',
     long_description=readme,
