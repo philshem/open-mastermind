@@ -10,6 +10,10 @@ Install with `pip` from the command line:
 
     pip install open-mastermind
 
+And run with this command:
+
+    mastermind
+
 Although written in Python3.7, it's compatible back to Python2.7.
 
 ## to get the code
