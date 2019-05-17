@@ -9,7 +9,7 @@ with open(path.join(here, 'requirements.txt')) as f:
 with open(path.join(here, 'README.md')) as f:
     readme = f.read()
 
-with open(path.join(here, 'open_mastermind', 'version')) as f:
+with open(path.join(here, 'mastermind', 'version')) as f:
     version = f.read().strip()
 
 setup(
