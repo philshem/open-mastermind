@@ -6,16 +6,18 @@ Terminal-based python of classic board game [Mastermind®](https://en.wikipedia.
 
 ## to get the code
 
-Clone the repository, then install the requirements (currently only the non-standary python3 library [`colorama`](https://pypi.org/project/colorama/), which prints a colorful terminal.)
+Clone the repository, then install the requirements (currently only the non-standard python library [`colorama`](https://pypi.org/project/colorama/), which prints a colorful terminal.)
 
     git clone https://github.com/philshem/open-mastermind.git
     cd open-mastermind
-    pip3 install -r requirements.txt
+    pip install -r requirements.txt
+
+Written in Python3.7, it's also working for Python2.7 as well.
 
 ## to play
 
     cd open-mastermind
-    python3 mastermind.py
+    python mastermind.py
 
 ## example game play
 
@@ -41,7 +43,7 @@ Type !h during gameplay to read these instructions.
 
 Type !q during gameplay to quit and show the solution.
 
-## change the game parameters
+##change the game parameters
 
 Edit the file `params.py` to:
 
@@ -55,6 +57,6 @@ Edit the file `params.py` to:
 
 ---
 
-## screenshot
+##screenshot of gameplay
 
 ![screenshot of gameplay](https://gist.githubusercontent.com/philshem/71507d4e8ecfabad252fbdf4d9f8bdd2/raw/e00c621f403520d3268f2a9ece176fb2f05f2185/mastermind.png)

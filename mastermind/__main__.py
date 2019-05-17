@@ -1,0 +1,3 @@
+import mastermind
+
+mastermind.main()

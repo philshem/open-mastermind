@@ -1,7 +1,13 @@
 #!/usr/bin/env python
+# coding: utf-8
 
 ''' play mastermind '''
 
+# python2 compatability
+from __future__ import print_function
+import __builtin__; input = getattr(__builtin__, 'raw_input', input)
+
+# internal parameters
 import params
 
 import os
@@ -15,7 +21,7 @@ def generate_board():
 
 
 def make_guess(msg, master):
-
+	
 	guess = input(msg).lower().strip()
 
 	if guess.startswith('!h'):
