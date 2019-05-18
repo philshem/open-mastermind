@@ -15,13 +15,13 @@ from . import params
 
 import os
 import random
+from collections import Counter
 from colorama import init, Style, Fore
 
 def generate_board():
 
 	# generates a random board based on params.py
 	return [random.choice(list(params.color_dict.keys())) for x in range(params.count_boxes)]
-
 
 def make_guess(msg, master):
 	
@@ -70,7 +70,7 @@ def print_instructions():
 	print()
 
 def print_results(inp):
-	
+
 	grid = [Fore.WHITE + Style.BRIGHT + params.answer_dict.get(x) for x in inp]
 	print(' '.join(grid))
 	print(Style.RESET_ALL)
@@ -80,30 +80,30 @@ def get_results(guess, master):
 
 	response = []
 
-	for j, x in enumerate(list(master)):
+	# much simpler logic
+	# https://stackoverflow.com/a/45798078/2327328
 
-		# scenario 1: color not in solution
-		if master[j] not in guess:
-			response += '9'
+	correct_colors = sum((Counter(guess) & Counter(master)).values())
+	correct_locations = sum(g == m for g, m in zip(guess, master))
 
-		# scenario 2: color in solution, but wrong position
-		elif master[j] in guess and master[j] != guess[j]:
-			response += '2'
+	correct_results = max(0,correct_colors - correct_locations)
+	incorrect_results = max(0,params.count_boxes - correct_colors)
 
-		# scenario 3: color in solution, correct position
-		elif master[j] == guess[j]:
-			response += '1'
+	result = '1' * correct_locations \
+             + '2' * correct_results \
+             + '9' * incorrect_results
 
+	print(result)
 	# something went wrong
-	if len(response) != params.count_boxes:
+	if len(result) != params.count_boxes:
 		print('🚀 Houston. We have a problem.')
 		exit(0)
 
 	# sort response array - comment out for debugging
-	response = list(sorted(response))
+	#response = list(sorted(response))
 
-	return response
-	
+	return result
+
 def main():
 	# clear terminal
 	os.system('clear')
@@ -140,12 +140,12 @@ def main():
 
 		# check guess - if you made it this far, 
 		# the guess is valid and there are still more turns
-		results = get_results(guess, master)
+		result = get_results(guess, master)
 
-		print_results(results)
+		print_results(result)
 
-		if ''.join(results) == '1'*params.count_boxes:
-			print('🎉 Congrats! You found the solution:')
+		if result == '1' * params.count_boxes:
+			print('🎉 Congrats mastermind! You found the solution:')
 			print_colors(master,params.guess_peg,True)
 			print()
 			exit(0)
