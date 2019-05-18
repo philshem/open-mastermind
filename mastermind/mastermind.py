@@ -93,7 +93,8 @@ def get_results(guess, master):
              + '2' * correct_results \
              + '9' * incorrect_results
 
-	print(result)
+	if params.debug: print(result)
+
 	# something went wrong
 	if len(result) != params.count_boxes:
 		print('🚀 Houston. We have a problem.')
