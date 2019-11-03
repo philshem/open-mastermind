@@ -39,7 +39,7 @@ def make_guess(msg, master):
 		print('Invalid guess. Must be',str(params.count_boxes),'colors.','\n')
 		return None
 	elif not all([x in params.color_dict.keys() for x in list(guess)]):
-		print('Invalid guess. Must include only letters rgyb.','\n')
+		print('Invalid guess. Must include only letters: '+print_color_choices()+'\n')
 		return None
 	else:
 		return guess
@@ -57,7 +57,7 @@ def print_colors(inp, guess_char, tf_master):
 
 def print_instructions():
 	print('Puzzle contains '+str(params.count_boxes)+' boxes. Each turn you choose from '+str(params.count_colors)+' colors.')
-	print('Color choices: '+' '.join([v+k+Style.RESET_ALL for k,v in params.color_dict.items()]))
+	print('Color choices: '+print_color_choices())
 	print('Example turn: rybg')
 	print('Response:')
 	print(params.answer_dict.get('1')+'  :  correct color in correct position')
@@ -68,6 +68,11 @@ def print_instructions():
 	print('Type !h to read these instructions again.')
 	print('Type !q to quit and show solution.')
 	print()
+
+def print_color_choices():
+
+	return ' '.join([v+k+Style.RESET_ALL for k,v in params.color_dict.items()])
+
 
 def print_results(inp):
 
