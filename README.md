@@ -4,6 +4,8 @@ Terminal-based python of classic board game [Mastermind®](https://en.wikipedia.
 
 ![Mastermind board game](https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Mastermind.jpg/137px-Mastermind.jpg)
 
+![screenshot of gameplay](https://gist.githubusercontent.com/philshem/71507d4e8ecfabad252fbdf4d9f8bdd2/raw/e00c621f403520d3268f2a9ece176fb2f05f2185/mastermind.png)
+
 ## to get the game
 
 Install with `pip` from the command line:
@@ -78,9 +80,3 @@ Edit the file `params.py` to:
  + new colors
 
  + different emoji playing pieces
-
----
-
-## screenshot of gameplay
-
-![screenshot of gameplay](https://gist.githubusercontent.com/philshem/71507d4e8ecfabad252fbdf4d9f8bdd2/raw/e00c621f403520d3268f2a9ece176fb2f05f2185/mastermind.png)
