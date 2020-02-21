@@ -16,18 +16,6 @@ And run with this command:
 
 Although written in Python3.7, it's compatible back to Python2.7.
 
-## to get the code
-
-Clone the repository, then install the requirements (currently only the non-standard python library [`colorama`](https://pypi.org/project/colorama/), which prints a colorful terminal.)
-
-    git clone https://github.com/philshem/open-mastermind.git
-    cd open-mastermind
-    pip install -r requirements.txt
-
-And to play from your downloaded code:
-
-    python mastermind.py
-
 ## example game play
 
 Each puzzle contains 4 boxes. Each turn you choose from 6 colors.
@@ -51,6 +39,32 @@ The order of the response tiles is sorted and does not necessarily match the pos
 Type !h during gameplay to read these instructions.
 
 Type !q during gameplay to quit and show the solution.
+
+## 2-player mode
+
+Solutions can be hashed and shared with other players. To generate a code for the solution `red-green-yellow-blue` (rgyb):
+
+    mastermind rgyb
+
+    > Your code to play rgyb is 20419
+
+Then share the code `20419` with the other player, who plays the desired game like this:
+
+    mastermind 20419
+
+It's _serverless_ and also on the honor system. Codes are generated on the fly based on the [16-bit CRC value](https://docs.python.org/2/library/binascii.html#binascii.crc_hqx).
+
+# to get the code
+
+Clone the repository, then install the requirements (currently only the non-standard python library [`colorama`](https://pypi.org/project/colorama/), which prints a colorful terminal.)
+
+    git clone https://github.com/philshem/open-mastermind.git
+    cd open-mastermind
+    pip install -r requirements.txt
+
+And to play from your downloaded code:
+
+    python mastermind.py
 
 
 ## change the game parameters
